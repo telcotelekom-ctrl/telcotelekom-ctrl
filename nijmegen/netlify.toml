@@ -1,0 +1,7 @@
+# The project's base directory is set to "nijmegen" in the Netlify UI,
+# so this file lives here. Paths below are relative to this folder.
+[build]
+  # Static site: no build step required. Overrides the invalid "build"
+  # command configured in the Netlify UI.
+  command = "echo 'No build step required'"
+  publish = "public"
