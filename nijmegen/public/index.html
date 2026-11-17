@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Streaming Nijmegen</title>
+<meta name="description" content="Streaming Nijmegen — live stream player.">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Naar inhoud / Skip to content</a>
+
+<div id="intro" class="intro" role="dialog" aria-label="Intro" aria-live="polite">
+  <div class="intro-grid" aria-hidden="true"></div>
+  <div class="intro-inner">
+    <p class="intro-sys" id="intro-sys">INTRODUCEASINDSINS.CD.SYS</p>
+    <h1 class="intro-title"><span>STREAMING</span><span class="big">NIJMEGEN</span></h1>
+    <p class="intro-tag" id="intro-tag"></p>
+    <div class="intro-bar"><i id="intro-progress"></i></div>
+    <button class="intro-skip" id="intro-skip" type="button">Overslaan / Skip ›</button>
+  </div>
+</div>
+
+<header class="top">
+  <div class="brand"><span class="dot" id="live-dot" aria-hidden="true"></span><strong>STREAMING NIJMEGEN</strong></div>
+  <span class="status" id="status" role="status">Geen stream / No stream</span>
+</header>
+
+<main id="main">
+  <section class="stage">
+    <video id="player" controls playsinline aria-label="Live stream"></video>
+    <div class="empty" id="empty">
+      <p>Voer een stream-URL in om te starten.<br><small>Enter a stream URL (HLS .m3u8 or MP4) to start.</small></p>
+    </div>
+  </section>
+
+  <form class="loader" id="loader">
+    <label for="src">Stream-URL</label>
+    <div class="row">
+      <input id="src" type="url" required placeholder="https://…/live.m3u8" autocomplete="url">
+      <button type="submit">Afspelen / Play</button>
+    </div>
+    <p class="hint">Deelbaar: voeg <code>?src=URL</code> toe aan het adres. Shareable via <code>?src=URL</code>.</p>
+  </form>
+
+  <section class="lists">
+    <div>
+      <h2>Kanalen / Channels</h2>
+      <ul id="channels" class="list"></ul>
+    </div>
+    <div>
+      <h2>Recent</h2>
+      <ul id="recent" class="list"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <span>© <span id="year"></span> Streaming Nijmegen</span>
+  <span>Geen tracking · No tracking cookies</span>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js" defer></script>
+<script src="/scrjm.jammerxxxl.js" defer></script>
+</body>
+</html>
